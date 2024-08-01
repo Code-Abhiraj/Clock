@@ -1,0 +1,64 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #282c34, #6a1b9a);
+}
+
+.clock {
+    width: 600px;
+    height: 600px;
+    border: 20px solid #23e0ae;
+    border-radius: 50%;
+    position: relative;
+    background: radial-gradient(circle, #202020, #0a0a0a);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.hand {
+    width: 50%;
+    height: 2px;
+    background: #61dafb;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: left center;
+    transform: rotate(-90deg);
+    transition: transform 0.5s cubic-bezier(0.4, 2.3, 0.3, 1);
+}
+
+.hour {
+    width: 30%;
+    height: 6px;
+    background: #ffeb3b; /* Bright yellow for the hour hand */
+    box-shadow: 0 0 10px rgba(255, 235, 59, 0.6);
+}
+
+.minute {
+    width: 45%;
+    height: 4px;
+    background: #ff9800; /* Bright orange for the minute hand */
+    box-shadow: 0 0 8px rgba(255, 152, 0, 0.6);
+}
+
+.second {
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(to right, #f44336, #e57373); /* Gradient for the second hand */
+    box-shadow: 0 0 6px rgba(244, 67, 54, 0.6);
+}
+
+.clock::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ffeb3b, #ffc107);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
